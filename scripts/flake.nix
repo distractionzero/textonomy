@@ -14,7 +14,11 @@
         in
         {
           default = pkgs.mkShell {
-            packages = [ pkgs.uv ];
+            packages = [
+              pkgs.uv
+              pkgs.just
+              pkgs.gh
+            ];
             LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
               pkgs.stdenv.cc.cc.lib
               pkgs.zlib
